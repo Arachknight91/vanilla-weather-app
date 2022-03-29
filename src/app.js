@@ -16,7 +16,7 @@ function formatDate(timestamp){
 
 
 function weatherTemp(response){
-  console.log(response.data)
+ 
   let temperature = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
   let windSpeed = document.querySelector("#wind");
@@ -38,11 +38,12 @@ function weatherTemp(response){
 }
 function search(){
   let apiKey="ae4795bee3633c2c1a492c868000b9fd";
-  let city = "New York";
+  let city = document.querySelector("#city-input").value;
   let apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(weatherTemp);
 
 }
+
 
 function handleSubmit(event) {
   event.preventDefault();
@@ -51,7 +52,7 @@ function handleSubmit(event) {
 }
 
 
-search("New York")
+
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit )

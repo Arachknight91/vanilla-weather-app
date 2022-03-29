@@ -10,7 +10,7 @@ body {
 }
 h1 {
   color: rgb(57, 57, 94);
-  font-size: 50px;
+  font: 45px;
   font-weight: 100;
   line-height: 28px;
 }
@@ -22,13 +22,13 @@ li {
   list-style: none;
   line-height: 20px;
   color: rgb(57, 57, 94);
-  font-size: 24px;
+  font-size: 25px;
   font-weight: 100;
   margin: 0;
-  padding: 5;
+  padding: 0;
   text-transform: capitalize;
 }
-#credit {
+.credit {
   font-size: 18px;
   text-align: center;
 }
