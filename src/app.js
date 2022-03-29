@@ -18,18 +18,23 @@ function formatDate(timestamp){
 function weatherTemp(response){
   console.log(response.data)
   let temperature = document.querySelector("#temperature");
-  let city = document.querySelector("#city");
+  let cityElement = document.querySelector("#city");
   let windSpeed = document.querySelector("#wind");
   let description = document.querySelector("#description");
   let humidity = document.querySelector("#humidity");
   let dateElement = document.querySelector("#date");
+  let iconElement = document.querySelector("#icon");
+
   temperature.innerHTML=Math.round(response.data.main.temp);
-  city.innerHtml = response.data.main.name;
+  cityElement.innerHtml = response.data.name;
   windSpeed.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} k`;
   description.innerHTML = response.data.weather[0].description;
   humidity.innerHTML = `Humidity: ${response.data.main.humidity}`;
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
-
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 
@@ -37,5 +42,6 @@ function weatherTemp(response){
 
 
 let apiKey="ae4795bee3633c2c1a492c868000b9fd";
-let apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=dallas&appid=${apiKey}&units=metric`;
+let city = "Paris"
+let apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(weatherTemp);
