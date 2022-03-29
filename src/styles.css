@@ -4,7 +4,7 @@ body {
 .weather-app {
   max-width: 600px;
   margin: 30px auto;
-  border: 1px solid rgb(103, 103, 170) S;
+  border: 1px solid rgb(103, 103, 170);
   padding: 20px;
   border-radius: 10px;
 }
@@ -27,4 +27,8 @@ li {
   margin: 0;
   padding: 5;
   text-transform: capitalize;
+}
+#credit {
+  font-size: 18px;
+  text-align: center;
 }
