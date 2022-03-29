@@ -16,7 +16,17 @@
 </head>
 <body>
   <div class="container">
-    <div class="weather-app"> 
+    <div class="weather-app">
+      <div class="row">
+        <div class="col-9">
+      <form id="search-form" class="mb-5">
+        <input type="input" placeholder="Search City" class="form-control" id="city-input"/>
+        </div>
+        <div class="col-3">
+        <input type="submit" value="Search" class="btn btn-primary w-100">
+      </form>
+        </div>
+      </div> 
       <h1 id="city">new york
       </h1>
       <ul>
@@ -47,7 +57,7 @@
               <li id="wind">
               </li>
             </ul>
-            <button class="search-c">Search City</button>
+            
           </div>
             
             </div>

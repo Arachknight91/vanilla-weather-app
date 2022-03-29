@@ -36,12 +36,22 @@ function weatherTemp(response){
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
 }
+function search(){
+  let apiKey="ae4795bee3633c2c1a492c868000b9fd";
+  let city = "New York";
+  let apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(weatherTemp);
+
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector("#city-input");
+  search(cityInput.value);
+}
 
 
+search("New York")
 
-
-
-let apiKey="ae4795bee3633c2c1a492c868000b9fd";
-let city = "Paris"
-let apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-axios.get(apiUrl).then(weatherTemp);
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit )
