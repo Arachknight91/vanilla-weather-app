@@ -14,7 +14,7 @@ function formatDate(timestamp){
 }
 
 function displayForecast(response){
-  console.log(response);
+  console.log(response.data);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML='<div class="row">';
   let days = ["Thu", "Fri", "Sat", "Sun"];
@@ -71,7 +71,7 @@ function weatherTemp(response){
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-  getforecast(response.data.coord);
+  getforecast(response.data);
 }
 function search(){
   
