@@ -52,6 +52,8 @@ function handleSubmit(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#city-input");
   search(cityInput.value);
+  let h1 = document.querySelector("#city");
+  h1.innerHTML= document.querySelector("#city-input").value;
 }
 
 function displayFahrenheit(event) {
@@ -64,12 +66,10 @@ function displayFahrenheit(event) {
 }
 function displayCelsius(event){
   event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  let cityInput = document.querySelector("#city-input");
-  temperatureElement.innerHTML = search(cityInput);
+  let tempElement = document.querySelector("#temperature");
+  tempElement.innerHTML= Math.round(celsiusTemperature);
+  
 }
-let h1 = document.querySelector("#city");
-h1.innerHTML= document.querySelector("#city-input").value;
 
 search("New York");
 
