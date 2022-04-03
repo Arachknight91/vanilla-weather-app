@@ -47,7 +47,7 @@ function search(){
   
 }
 let h1 = document.querySelector("#city");
-h1.innerHTML = "#city-input";
+h1.innerHTML = city;
 
 
 function handleSubmit(event) {
