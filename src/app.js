@@ -71,6 +71,7 @@ function displayCelsius(event){
   temperatureElement.innerHTML = search(cityInput);
 }
 
+search("New York");
 
 let celsiusTemperature = null;
 
@@ -82,5 +83,3 @@ fahrenheitTemp.addEventListener("click", displayFahrenheit);
 
 let celsiusTemp = document.querySelector("#celsius-temp");
 celsiusTemp.addEventListener("click", displayCelsius);
-
-search("New York");
