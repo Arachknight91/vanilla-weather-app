@@ -28,7 +28,7 @@ function weatherTemp(response){
   celsiusTemperature = response.data.main.temp;
 
   temperature.innerHTML=Math.round(celsiusTemperature);
-  cityElement.innerHtml = response.data.main.name;
+  cityElement.innerHtml = response.data.name;
   windSpeed.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} k`;
   description.innerHTML = response.data.weather[0].description;
   humidity.innerHTML = `Humidity: ${response.data.main.humidity}`;
@@ -72,7 +72,7 @@ function displayCelsius(event){
 search("New York");
 
 let h1 = document.querySelector("#city");
-h1.innerHTML = cityElement;
+h1.innerHTML = form;
 
 let celsiusTemperature = null;
 
