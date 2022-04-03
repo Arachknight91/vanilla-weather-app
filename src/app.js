@@ -72,7 +72,8 @@ function displayCelsius(event){
 search("New York");
 
 let h1 = document.querySelector("#city");
-h1.innerHTML = search;
+h1.innerHTML = (cityInput.value);
+
 let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
