@@ -69,7 +69,7 @@ function displayCelsius(event){
   temperatureElement.innerHTML = search(cityInput);
 }
 let h1 = document.querySelector("#city");
-h1.innerHTML= document.querySelector("#city-input")
+h1.innerHTML= document.querySelector("#city-input");
 
 search("New York");
 
