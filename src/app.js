@@ -13,7 +13,25 @@ function formatDate(timestamp){
   return `Last updated ${day} ${hours}:${minutes}`;
 }
 
+function displayForecast(){
+  let forecast = document.querySelector("#forecast");
+  forecast.innerHTML= `  <div class="weather-forecast" id="forecast">
+          <div class="row">
+            <div class="col-2">
+              <div class="weather-forecast-date">
+                Thur
+              </div>
+              <div class="icons">
+              <i class="fa-solid fa-cloud"></i>
+              </div>
+              <div class="weather-forecast-temperatures">
+              <span class="weather-forecast-max">18°</span>
+              <span class="weather-forecast-min">12°</span>
+              </div>
+            </div>
+          </div>`
 
+}
 
 function weatherTemp(response){
  
@@ -72,6 +90,7 @@ function displayCelsius(event){
 }
 
 search("New York");
+displayForecast();
 
 
 
