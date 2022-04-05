@@ -12,7 +12,7 @@ function formatDate(timestamp){
   let day = days[date.getDay()];
   return `Last updated ${day} ${hours}:${minutes}`;
 }
-function formatDsy(forecastDay){
+function formatDay(forecastDay){
   let date = new Date(timestamp * 1000);
   let day = Date.getDay();
   let days = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"];
