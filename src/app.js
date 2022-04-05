@@ -12,55 +12,6 @@ function formatDate(timestamp){
   let day = days[date.getDay()];
   return `Last updated ${day} ${hours}:${minutes}`;
 }
-function formatDay(forecastDay){
-  let date = new Date(timestamp * 1000);
-  let day = Date.getDay();
-  let days = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"];
-
-  return days[day];
-}
-
-function displayForecast(response){
-  let forecast = response.data.daily;
-  let forecastElement = document.querySelector("#forecast");
-  let forecastHTML='<div class="row">';
-  
-  forecast.forEach(function(forecastDay, index){
-    if (index > 6){
-
-    forecastHTML= forecastHTML + `  
-          
-            <div class="col-2">
-              <div class="weather-forecast-date">
-                ${formatDay(forecastDay.dt)}
-              </div>
-              <div class="icons">
-              <img 
-               src = "http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2px.png"
-               alt = ""
-               width="42"/>
-              </div>
-              <div class="weather-forecast-temperatures">
-              <span class="weather-forecast-max">${Math.round(forecastDay.temp.max)}°</span>
-              <span class="weather-forecast-min">${Math.round(forecastDay.temp.min)}°</span>
-              </div>
-            </div>
-          `;
-        }}
-        );
-         
-    forecastHTML= forecastHTML + `</div>`;      
-  forecastElement.innerHTML = forecastHTML;
-
-}
-
-function getForecast(coordinates){
-  console.log(coordinates);
-  let apiKey="ae4795bee3633c2c1a492c868000b9fd";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
-  axios.get(apiUrl).then(displayForecast);
-}
 
 function weatherTemp(response){
  
@@ -76,15 +27,15 @@ function weatherTemp(response){
 
   temperature.innerHTML=Math.round(celsiusTemperature);
   cityElement.innerHtml = response.data.name;
-  windSpeed.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} k`;
-  description.innerHTML = response.data.weather[0].description;
+  windSpeed.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} m/h`;
+  description.innerHTML = `condition:${response.data.weather[0].description}`;
   humidity.innerHTML = `Humidity: ${response.data.main.humidity}`;
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   iconElement.setAttribute(
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-  getForecast(response.data.coord);
+  
 }
 function search(){
   
@@ -119,7 +70,7 @@ function displayCelsius(event){
   
 }
 
-search("New York");
+
 
 
 
